@@ -258,4 +258,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - **Mantra Softech** for the MFS110 fingerprint sensor
 - **MongoDB Atlas** for cloud database hosting
-- **Web Serial API** for browser-based sensor communication 
+- **Web Serial API** for browser-based sensor communication
