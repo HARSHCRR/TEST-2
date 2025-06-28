@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - Healthcare System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>👨‍⚕️ Doctor Dashboard</h1>
+            <a href="/" class="back-link">← Back to Home</a>
+        </header>
+        
+        <main class="main-content">
+            <div class="dashboard-container">
+                <div class="scan-section">
+                    <h2>🔍 Scan New Patient</h2>
+                    <p>Use the Mantra MFS110 sensor to scan patient fingerprint for quick identification</p>
+                    
+                    <div class="fingerprint-status">
+                        <div id="scanStatus" class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Ready to scan</span>
+                        </div>
+                    </div>
+                    
+                    <div class="scan-controls">
+                        <button id="scanFingerprint" class="btn btn-primary">
+                            📱 Scan Fingerprint
+                        </button>
+                        <button id="clearScan" class="btn btn-secondary">
+                            🗑️ Clear
+                        </button>
+                    </div>
+                    
+                    <div id="scanPreview" class="fingerprint-preview" style="display: none;">
+                        <h4>Scanned Fingerprint:</h4>
+                        <div id="scanImage" class="fingerprint-image"></div>
+                    </div>
+                </div>
+                
+                <div class="patient-info-section">
+                    <h2>📋 Patient Information</h2>
+                    <div id="patientInfo" class="patient-info" style="display: none;">
+                        <div class="patient-card">
+                            <div class="patient-header">
+                                <h3 id="patientName">Patient Name</h3>
+                                <span class="patient-id" id="patientId">ID: #12345</span>
+                            </div>
+                            
+                            <div class="patient-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Age:</span>
+                                    <span class="detail-value" id="patientAge">25</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Gender:</span>
+                                    <span class="detail-value" id="patientGender">Male</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Blood Group:</span>
+                                    <span class="detail-value" id="patientBloodGroup">O+</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Registration Date:</span>
+                                    <span class="detail-value" id="patientDate">2024-01-01</span>
+                                </div>
+                            </div>
+                            
+                            <div class="patient-actions">
+                                <button class="btn btn-info">📄 View Medical Records</button>
+                                <button class="btn btn-warning">✏️ Edit Information</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="noPatientFound" class="no-patient" style="display: none;">
+                        <div class="no-patient-content">
+                            <div class="no-patient-icon">🔍</div>
+                            <h3>Patient Not Found</h3>
+                            <p>The scanned fingerprint doesn't match any registered patient.</p>
+                            <a href="/signup" class="btn btn-primary">Register New Patient</a>
+                        </div>
+                    </div>
+                    
+                    <div id="scanPrompt" class="scan-prompt">
+                        <div class="scan-prompt-content">
+                            <div class="scan-prompt-icon">👆</div>
+                            <h3>Ready to Scan</h3>
+                            <p>Click "Scan Fingerprint" to begin patient identification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recent-patients">
+                <h2>📊 Recent Patients</h2>
+                <div id="recentPatientsList" class="patients-list">
+                    <!-- Recent patients will be loaded here -->
+                </div>
+            </div>
+        </main>
+        
+        <div id="notification" class="notification" style="display: none;"></div>
+    </div>
+    
+    <script src="fingerprint.js"></script>
+    <script src="doctor.js"></script>
+</body>
+</html> 
